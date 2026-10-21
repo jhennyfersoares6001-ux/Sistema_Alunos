@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página Inicial</title>
+
+    <link rel="stylesheet" href="{% static 'alunos/style.css' %}">
+</head>
+
+<body>
+
+    <h1> Bem-vindo ao Sistema de Alunos </h1>
+
+    <p>
+        Gerencie alunos e cursos de forma simples e organizada.
+    </p>
+
+    <hr>
+
+    <h2>Gerenciamento de Alunos</h2>
+
+    <div class="lista-alunos">
+
+        <div class="cartao-aluno">
+            <h3>Cadastrar Aluno</h3>
+
+            <p>Adicione um novo aluno ao sistema.</p>
+
+            <a href="{% url 'cadastrar_aluno' %}">
+                Cadastrar Aluno
+            </a>
+        </div>
+
+        <div class="cartao-aluno">
+            <h3>Listar Alunos</h3>
+
+            <p>Consulte os alunos já cadastrados.</p>
+
+            <a href="{% url 'listar_alunos' %}">
+                Ver Alunos
+            </a>
+        </div>
+
+    </div>
+
+    <h2>Gerenciamento de Cursos</h2>
+
+    <div class="lista-cursos">
+
+        <div class="cartao-curso">
+            <h3>Cadastrar Curso</h3>
+
+            <p>Adicione novos cursos ao sistema.</p>
+
+            <a href="{% url 'cadastrar_curso' %}">
+                Cadastrar Curso
+            </a>
+        </div>
+
+        <div class="cartao-curso">
+            <h3>Listar Cursos</h3>
+
+            <p>Consulte os cursos cadastrados.</p>
+
+            <a href="{% url 'listar_cursos' %}">
+                Ver Cursos
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

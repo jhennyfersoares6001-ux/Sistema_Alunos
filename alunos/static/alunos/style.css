@@ -1,0 +1,285 @@
+/* Configurações gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 35px;
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fb;
+    color: #263445;
+    line-height: 1.6;
+}
+
+/* Títulos */
+h1 {
+    color: #A21CAF;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #86198f;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 23px;
+}
+
+h3 {
+    font-size: 19px;
+}
+
+/* Links e botões */
+a,
+button {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #a21caf;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+a:hover,
+button:hover {
+    background-color: #86198f;
+    transform: translateY(-2px);
+}
+
+/* Links de exclusão */
+a[href*="excluir"] {
+    background-color: #dc2626;
+}
+
+a[href*="excluir"]:hover {
+    background-color: #b91c1c;
+}
+
+/* Formulários */
+form {
+    width: 100%;
+    max-width: 550px;
+    padding: 28px;
+    margin: 25px 0;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #fff;
+    font: inherit;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #a21caf;
+    box-shadow: 0 0 0 3px rgba(162, 28, 175, 0.12);
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Separadores */
+hr {
+    border: none;
+    border-top: 1px solid #dbe3ee;
+    margin: 25px 0;
+}
+
+/* Listas de alunos e cursos */
+.lista-alunos,
+.lista-cursos {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 260px), 1fr)
+    );
+    gap: 22px;
+    margin-top: 20px;
+}
+
+/* Cartões de alunos e cursos */
+.cartao-aluno,
+.cartao-curso {
+    min-width: 0;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #dbe3ee;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao-aluno:hover,
+.cartao-curso:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(162, 28, 175, 0.10);
+}
+
+/* Títulos dos cartões */
+.cartao-aluno h3,
+.cartao-curso h3 {
+    color: #A21CAF;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+/* Textos dos cartões */
+.cartao-aluno p,
+.cartao-curso p {
+    overflow-wrap: anywhere;
+    color: #475569;
+}
+
+/* Mensagens de formulário */
+.errorlist {
+    color: #dc2626;
+    padding-left: 20px;
+}
+
+/* Adaptação para celulares */
+@media (max-width: 600px) {
+    body {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .cartao-aluno,
+    .cartao-curso {
+        padding: 18px;
+    }
+
+    a,
+    button {
+        max-width: 100%;
+    }
+}
+/* ===== Página inicial ===== */
+
+.pagina-inicial {
+    padding: 0;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: #a21caf;
+    color: white;
+    padding: 28px 35px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.cabecalho h1 {
+    color: white;
+    margin: 0;
+    font-size: 30px;
+}
+
+.cabecalho p {
+    margin-bottom: 0;
+    color: #fae8ff;
+}
+
+/* Área de boas-vindas */
+.boas-vindas {
+    margin-bottom: 35px;
+}
+
+.boas-vindas h2 {
+    margin-top: 0;
+    color: #86198f;
+}
+
+.boas-vindas p {
+    color: #64748b;
+}
+
+/* Títulos das seções */
+.titulo-secao {
+    margin-top: 35px;
+    margin-bottom: 18px;
+    color: #86198f;
+}
+
+/* Cartões da página inicial */
+.painel-cartoes {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 240px), 1fr)
+    );
+    gap: 22px;
+}
+
+.painel-cartao {
+    background-color: white;
+    padding: 25px;
+    border: 1px solid #dbe3ee;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.painel-cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(30, 64, 175, 0.10);
+}
+
+.painel-cartao h3 {
+    margin-top: 0;
+    color: #86198f;
+}
+
+.painel-cartao p {
+    color: #64748b;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 22px;
+    }
+
+    .cabecalho h1 {
+        font-size: 25px;
+    }
+
+    .painel-cartao {
+        padding: 20px;
+    }
+}
+

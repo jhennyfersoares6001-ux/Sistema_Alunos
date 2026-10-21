@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar Aluno</title>
+
+    <link rel="stylesheet" href="{% static 'alunos/style.css' %}">
+</head>
+
+<body>
+
+    <h1>Cadastrar Aluno</h1>
+
+    <p>Preencha os campos abaixo para cadastrar um novo aluno.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Cadastrar Aluno</button>
+    </form>
+
+    <a href="{% url 'pagina_inicial' %}">Voltar para a tela inicial</a>
+
+</body>
+</html>

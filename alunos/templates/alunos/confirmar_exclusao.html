@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Aluno</title>
+    <link rel="stylesheet" href="{% static 'alunos/style.css' %}">
+</head>
+<body>
+    <h1>Confirmar exclusão</h1>
+
+    <p>
+        Tem certeza de que deseja excluir o aluno
+        <strong>{{ aluno.nome }}</strong>?
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+
+    <a href="{% url 'listar_alunos' %}">Cancelar</a>
+</body>
+</html>

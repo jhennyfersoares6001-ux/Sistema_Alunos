@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="{% static 'alunos/style.css' %}">
+</head>
+<body>
+    <h1>Cursos cadastrados</h1>
+
+    <a href="{% url 'cadastrar_curso' %}">Cadastrar novo curso</a>
+    <a href="{% url 'pagina_inicial' %}">Voltar para a tela inicial</a>
+
+    <hr>
+
+    <div class="lista-cursos">
+    {% for curso in cursos %}
+        <div class="cartao-curso">
+            <h2>{{ curso.nome }}</h2>
+
+            <p>{{ curso.descricao }}</p>
+
+            <a href="{% url 'editar_curso' curso.id %}">
+                Editar
+            </a>
+
+            <a href="{% url 'excluir_curso' curso.id %}">
+                Excluir
+            </a>
+        </div>
+    {% empty %}
+        <p>Nenhum curso cadastrado ainda.</p>
+    {% endfor %}
+</div>
